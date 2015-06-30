@@ -239,7 +239,8 @@
 						'product_name': 'Standalone-Community',
 						'product_prefix': '',
 						'product_extension': '',
-						'type': 'loadable_module',
+						'product_dir': '<(PRODUCT_DIR)',
+						'type': 'shared_library',
 						
 						'ldflags':
 						[
