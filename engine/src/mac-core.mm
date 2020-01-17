@@ -1730,7 +1730,9 @@ void MCMacPlatformHandleMouseCursorChange(MCPlatformWindowRef p_window)
     
     // MW-2014-06-25: [[ Bug 12634 ]] Make sure we only change the cursor if we are not
     //   within a native view.
-    if ([t_window -> GetContainerView() hitTest: [t_window -> GetView() mapMCPointToNSPoint: s_mouse_position]] == t_window -> GetView())
+    // Remove this check for the moment, since this prevents the cursor from
+    // updating when a native scroll view is used.
+    //if ([t_window -> GetContainerView() hitTest: [t_window -> GetView() mapMCPointToNSPoint: s_mouse_position]] == t_window -> GetView())
     {
         // Show the cursor attached to the window.
         MCPlatformCursorRef t_cursor;

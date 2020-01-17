@@ -311,11 +311,14 @@ void MCScreenDC::platform_boundrect(MCRectangle &rect, Boolean title, Window_mod
 ////////////////////////////////////////////////////////////////////////////////
 
 // SN-2015-06-16: [[ Bug 14056 ]] PI_NONE should be a valid cursor type
+// Map PI_LR (10), which doesn't appear to be used anywhere, to the platform
+// hand cursor. We can't use PI_HAND (8), since it's used as the default cursor
+// (see MCStack::getcursor()), which we want to be an arrow os OS X.
 static MCPlatformStandardCursor theme_cursorlist[PI_NCURSORS] =
 {
 	kMCPlatformStandardCursorNone, kMCPlatformStandardCursorArrow,
 	kMCPlatformStandardCursorArrow, kMCPlatformStandardCursorArrow, kMCPlatformStandardCursorArrow, kMCPlatformStandardCursorWatch, kMCPlatformStandardCursorWatch,
-	kMCPlatformStandardCursorCross, kMCPlatformStandardCursorArrow, kMCPlatformStandardCursorIBeam, kMCPlatformStandardCursorArrow, kMCPlatformStandardCursorArrow,
+	kMCPlatformStandardCursorCross, kMCPlatformStandardCursorArrow, kMCPlatformStandardCursorIBeam, kMCPlatformStandardCursorHand, kMCPlatformStandardCursorArrow,
 	kMCPlatformStandardCursorArrow, kMCPlatformStandardCursorCross, kMCPlatformStandardCursorWatch, kMCPlatformStandardCursorArrow   
 };
 

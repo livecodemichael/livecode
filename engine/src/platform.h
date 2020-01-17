@@ -683,6 +683,7 @@ enum MCPlatformStandardCursor
 	kMCPlatformStandardCursorWatch,
 	kMCPlatformStandardCursorCross,
 	kMCPlatformStandardCursorIBeam,
+	kMCPlatformStandardCursorHand,
 };
 
 void MCPlatformCreateStandardCursor(MCPlatformStandardCursor standard_cusor, MCPlatformCursorRef& r_cursor);

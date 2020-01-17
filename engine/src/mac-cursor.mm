@@ -216,6 +216,9 @@ void MCPlatformSetCursor(MCPlatformCursorRef p_cursor)
 		case kMCPlatformStandardCursorIBeam:
             [[NSCursor IBeamCursor] set];
 			break;
+		case kMCPlatformStandardCursorHand:
+			[[NSCursor pointingHandCursor] set];
+			break;
 		default:
 			assert(false);
 			break;
